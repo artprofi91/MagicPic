@@ -1,0 +1,427 @@
+body {
+  overflow-x: hidden;
+  font-family: 'Slabo 27px', serif !important;
+}
+#app {
+  margin-bottom: 300px !important;
+}
+
+p {
+  font-size: 16px;
+}
+p.large {
+  font-size: 16px;
+}
+a,
+a:hover,
+a:focus,
+a:active,
+a.active {
+  outline: none;
+}
+a.page-scroll {
+  font-family: 'Merienda One', cursive !important;
+}
+
+.navbar-custom .navbar-brand {
+  color: #333;
+  font-weight: bold;
+  background-color: none !important;
+  font-family: 'Merienda One', cursive !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Merienda One', cursive !important;
+
+  font-weight: 700;
+}
+
+.img-centered {
+  margin: 0 auto;
+}
+
+/*========button on first page========*/
+.btn-square {
+  position: relative;
+  width: 70px;
+  height: 70px;
+  margin-top: 15px;
+  padding: 7px 16px;
+  border: 2px solid #FFFFF0;
+  
+  font-size: 40px;
+  color: #FFFFF0;
+
+  background-color: #333 !important;
+  -webkit-animation: sdb06 5s infinite;
+  animation: sdb06 5s infinite;
+  box-sizing: border-box;
+}
+
+.btn-square:hover,
+.btn-square:active {
+color: #333;
+border: 2px solid #333;
+background-color: #FFFFF0 !important;
+-webkit-animation: sdb06 5s paused;
+animation: sdb06 5s paused;
+}
+
+
+@-webkit-keyframes sdb06 {
+  0% {
+    -webkit-transform: translate(0, 0);
+
+  }
+  50% {
+    -webkit-transform:  translate(0, 60px);
+  }
+}
+
+
+/*==========end of first page button=================*/
+
+
+
+/*=========navbar===============*/
+.navbar-custom .navbar-toggle {
+  background-color: white;
+  border-color: white;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  color: #333;
+  font-size: 12px;
+}
+
+.navbar-custom .nav li a {
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: #333;
+  font-size: 20px;
+}
+.navbar-custom .nav li a:hover,
+.navbar-custom .nav li a:focus {
+  outline: none;
+}
+.navbar-custom .navbar-nav > .active > a {
+  border-radius: 0;
+  color: #333;
+  background-color: white;
+}
+.navbar-custom .navbar-nav > .active > a:hover,
+.navbar-custom .navbar-nav > .active > a:focus {
+  color: #333;
+  background-color: white;
+}
+@media (min-width: 100px) {
+  .navbar-custom {
+    background-color: transparent;
+    padding: 25px 0;
+    -webkit-transition: padding 0.3s;
+    -moz-transition: padding 0.3s;
+    transition: padding 0.3s;
+    border: none;
+  }
+  .navbar-custom .navbar-brand {
+    font-size: 2em;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+  .navbar-custom .navbar-nav > .active > a {
+    border-radius: 3px;
+  }
+}
+@media (min-width: 100px) {
+  .navbar-custom.affix {
+    background-color: black;
+    padding: 10px 0;
+  }
+  .navbar-custom.affix .navbar-brand {
+    font-size: 1.5em;
+  }
+}
+header {
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  text-align: center;
+}
+header .intro-text {
+  position: relative;
+  padding-top: 100px;
+  padding-bottom: 50px;
+}
+header .intro-text {
+  position: relative;
+  font-size: 22px;
+  line-height: 22px;
+  margin-bottom: 25px;
+}
+header .intro-text .intro-heading {
+  position: relative;
+  font-family: 'Merienda One', cursive !important;
+  font-weight: 900;
+  font-size: 50px;
+  line-height: 50px;
+  margin-bottom: 25px;
+}
+@media (min-width: 768px) {
+  header .intro-text {
+    padding-top: 300px;
+    padding-bottom: 200px;
+  }
+  header .intro-text {
+    font-size: 40px;
+    line-height: 40px;
+    margin-bottom: 25px;
+  }
+  header .intro-text .intro-heading {
+    font-weight: 700;
+    font-size: 75px;
+    line-height: 75px;
+    margin-bottom: 50px;
+  }
+}
+section {
+  padding: 100px 0;
+}
+section h2.section-heading {
+  font-size: 40px;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+section h2.section-heading1 {
+  font-size: 40px;
+  margin-top: 0;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+section h3.section-subheading {
+  font-size: 20px;
+  font-family: 'Slabo 27px', serif !important;
+  text-transform: none;
+  font-weight: 400;
+  margin-bottom: 75px;
+}
+
+
+footer {
+  padding: 25px 0;
+  text-align: center;
+  background-color: black;
+}
+footer span.copyright {
+  line-height: 40px;
+  font-family: Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  text-transform: none;
+  color: #FFFFF0;
+  opacity: 0.7;
+}
+
+/*delete ugly blue border*/
+input:focus,
+input:active,
+.btn:focus,
+.btn:active {
+  outline: none !important;
+}
+
+
+.color {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+
+/*granim cool background*/
+.canvas-interactive-wrapper {
+    position: relative;
+    height: 800px;
+    text-align: center;
+}
+
+.canvas-interactive-wrapper canvas {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}   /*end of work with granim.js*/
+
+/*style for our team section*/
+.team-member {
+  text-align: center;
+  margin-bottom: 50px;
+}
+.team-member img {
+  margin: 0 auto;
+  border: 7px solid #333;
+}
+.team-member h4 {
+  margin-top: 25px;
+  margin-bottom: 0;
+  text-transform: none;
+}
+.team-member p {
+  margin-top: 0;
+}
+/*FB, linkedin, email bigger*/
+.fa-lg {
+  color: black;
+} /* end of style for our team section*/
+
+/*food/celebrity*/
+.btn-primary {
+  color: #FFFFF0;
+  background-color: #333;
+  border-color: #FFFFF0;
+  font-family: 'Merienda One', cursive !important;
+  font-weight: 700;
+  font-size: 20px;
+  float: left;
+  width: 162px;
+  margin-right: 20px;
+  margin-top: 20px;
+}
+
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:focus {
+  color: #333;
+  background-color: #FFFFF0;
+  border-color: #333;
+}
+
+
+input {
+  border: 2px solid #333;
+}
+
+input#filename {
+  padding: 1px;
+  width: 493px !important;
+  height: 26px !important;
+}
+
+
+/*upload file cool style*/
+ .custom-file-input::-webkit-file-upload-button {
+  visibility: hidden;
+}
+.custom-file-input::before {
+  content: 'File';
+  display: inline-block;
+  background-color: #333;
+  color: #FFFFF0;
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+  width: 70px;
+  text-align: center;
+  margin-left: 5px;
+}
+
+.custom-file-input:active::before {
+  background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+}  /*end of upload file cool stule button*/
+
+/*show our celebritu/food and it's name*/
+#img_preview1,
+#concepts {
+  margin-top: 20px;
+  font-family: 'Merienda One', cursive !important;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: #FFFFF0;
+  background-color: #333;
+  vertical-align: center !important;
+}
+
+/*move our team down (not shows when you in app section)*/
+.down {
+  margin-bottom: 400px;
+}
+
+/*hide */
+.hide{
+    display: none;
+}
+
+/*display wikiApi results*/
+.wiki {
+  background-color: #333;
+  border: 2px solid #FFFFF0;
+  margin: 10px 0px 0px 10px;
+}
+
+h4.title,
+p.extract {
+  color: #FFFFF0 !important;
+  padding-left: 10px;
+}
+.star, 
+.food {
+  margin-bottom: 20px;
+}
+
+
+
+/*display spoonacular results*/
+.spoonview {
+  display: flex !important;
+  flex-flow: row wrap !important;
+  justify-content: center !important;
+}
+.recipe-card {
+  width: 285px;
+  margin: 5px;
+  padding: 10px;
+  background-color: #333;
+  border-radius: 10px;
+}
+
+.recipe-card a {
+  text-decoration: none;
+  color: #FFFFF0;
+}
+
+.recipe-card h2 {
+  text-align: center;
+  color: #FFFFF0;
+}
+
+.recipe-card p {
+  margin-left: 20px;
+  color: #FFFFF0;
+}
+
+.recipe-image {
+  border: 2px solid #FFFFF0;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  width: 85%;
+  height: 200px;
+}
+
+.recipe-supplies {
+  text-align: center;
+  color: #FFFFF0;
+}

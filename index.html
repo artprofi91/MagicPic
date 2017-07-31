@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>MagicPic</title>
+    <!--Add favicon-->
+    <link rel="shortcut icon" type="image/png" href="assets/img/favicon.png">
+
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- Custom Fonts -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Merienda+One|Slabo+27px" rel="stylesheet">
+
+    <!-- for wiki api -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <!-- granim -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/granim/1.0.6/granim.js" integrity="sha256-xT9TVeVp6h3kvQFtXONqpG7IW6ntFDgzbM6Rd0k82ko=" crossorigin="anonymous"></script>
+    
+    <!-- Clarifai and Firebase links -->
+    <script type="text/javascript" src="https://sdk.clarifai.com/js/clarifai-latest.js"></script><script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+    <script>
+        var app = new Clarifai.App({
+            apiKey: 'd988d155711448a6868c0ba7b1c2958d'
+        });
+  
+        // Checks for valid image type
+        function validFile(imageName) {
+            var lowerImageName = imageName.toLowerCase();
+            return lowerImageName.search(/jpg|jpeg|png|bmp|tiff/gi) != -1;
+        }
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyABGsDJQzfbiAMfqn_hfxa_QhIFkue03ns",
+            authDomain: "team-project-6be21.firebaseapp.com",
+            databaseURL: "https://team-project-6be21.firebaseio.com",
+            projectId: "team-project-6be21",
+            storageBucket: "",
+            messagingSenderId: "962673456458"
+        };
+        firebase.initializeApp(config);
+    </script>
+
+
+    <!-- Theme CSS -->
+    <link href="assets/css/MagicPic.css" rel="stylesheet">
+</head>
+
+<body id="page-top" class="index">
+
+    <!-- Navigation -->
+    <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="#page-top">MagicPic</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                    <li>
+                        <a class="page-scroll" href="#app">App</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#team">Team</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <!-- Header -->
+    <header class="canvas-interactive-wrapper active">
+    <canvas id="canvas-interactive"></canvas>
+    <div class="cta-wrapper">
+        <div class="intro-text">
+            <div class="intro-heading">MagicPic</div>
+                <a href="#app" class="btn btn-square page-scroll">
+                    <i class="fa fa-angle-double-down animated"></i>
+                </a>
+            </div>
+    </div>
+        
+    </header>
+
+    
+
+
+
+
+    
+
+    <!-- App Section -->
+    <section id="app" class="bg-light-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">MagicPic</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 text-center">
+                    <h3>What are you searching for?</h3>
+                </div>
+                <div class="col-lg-3">
+                    <input type="hidden" id="hidden-counter" value="1">
+                    <button class="btn btn-primary" id="celebrity" value=""><i class="fa fa-star"></i> Celebrity</button>
+                </div>
+                <div class="col-lg-3">
+                    <button class="btn btn-primary" id="food" value=""><i class="fa fa-cutlery"></i> Food</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h3 class="h3-URL hide">Please upload image URL or choose Local File</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <input class="hide" type="text" id="imgurl" placeholder="Image URL" size="80">
+                </div>
+                <div class="col-lg-6">
+                    <input type="file" id="filename"  class="custom-file-input hide" title=" " size="120">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-lg-offset-2">
+                    <button class="btn btn-primary hide" id="url"><i class="fa fa-search"></i> Search</button>
+                </div>
+                <div class="col-lg-4 col-lg-offset-2">
+                    <button class="btn btn-primary hide" id="upload"><i class="fa fa-search"></i> Search</button>
+                </div>
+            </div>
+
+            <div class="row">
+                <div id="predictions">
+                    <div class="col-lg-6 text-center">
+                        <div>
+                            <img class="img-responsive" id="img_preview1" src="">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 text-center down">
+                        <div id="concepts" class="conceptBox">
+                        </div>
+                        <a href="#links" class="hero btn btn-square page-scroll hide"><i class="fa fa-angle-double-down animated"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Links Section -->
+        <section id="links" class="bg-light-gray">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <h2 class="hero-name section-heading1"></h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2  star hide">
+                        <button class="btn btn-primary" id="youtube"><i class="fa fa-youtube"></i> YouTube</button>
+                        <button class="btn btn-primary" id="spotify"><i class="fa fa-spotify"></i> Spotify</button>
+                        <button class="btn btn-primary" id="vimeo"><i class="fa fa-vimeo"></i> Vimeo</button>
+                        <button class="btn btn-primary" id="wikipedia"><i class="fa fa-wikipedia-w"></i> Wikipedia</button>
+                    </div>
+                    <div class="col-lg-8 col-lg-offset-2 food hide">
+                        <button class="btn btn-primary" id="yelp"><i class="fa fa-yelp"></i> Yelp</button>
+                        <button class="btn btn-primary" id="spoon"><i class="fa fa-spoon"></i> Spoonacular</button>
+                        <button class="btn btn-primary" id="google"><i class="fa fa-google"></i> GoogleMaps</button>
+                        <button class="btn btn-primary" id="wikipedia2"><i class="fa fa-wikipedia-w"></i> Wikipedia</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="displayBox"></div>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-lg-offset-5">
+                        <a href="#app" class="btn btn-primary hide" id="restart"><i class="fa fa-repeat"></i> Repeat</a> 
+                    </div>   
+                </div>
+            </div>
+
+        </section>
+    </section>
+
+       <!-- Team Section -->
+    <section id="team" class="bg-light-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Our Team</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="team-member">
+                        <img src="assets/img/Art.jpg" class="img-responsive img-circle" alt="Art">
+                        <h4>Artem Tregubchak</h4>
+                        <p class="text-muted">Full Stack Web Developer</p>
+                        <ul class="list-inline social-buttons">
+                            <li><a href="mailto:atregubchak@gmail.com"><i class="fa fa-envelope-o fa-lg"></i></a>
+                            </li>
+                            <li><a href="https://www.linkedin.com/in/atregubchak/"><i class="fa fa-linkedin fa-lg"></i></a>
+                            </li>
+                            <li><a href="https://www.facebook.com/artprofi91"><i class="fa fa-facebook fa-lg"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="team-member">
+                        <img src="assets/img/Grant.jpg" class="img-responsive img-circle" alt="">
+                        <h4>Grant Chan</h4>
+                        <p class="text-muted">Backend Developer</p>
+                         <ul class="list-inline social-buttons">
+                            <li><a href="mailto:grant.r.chan@gmail.com"><i class="fa fa-envelope-o fa-lg"></i></a>
+                            </li>
+                            <li><a href="https://www.linkedin.com/in/grant-chan-099872b2/"><i class="fa fa-linkedin fa-lg"></i></a>
+                            </li>
+                            <li><a href="https://www.facebook.com/renzhi.chan"><i class="fa fa-facebook fa-lg"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="team-member">
+                        <img src="assets/img/Art.jpg" class="img-responsive img-circle" alt="Charles">
+                        <h4>Charles McDowell</h4>
+                        <p class="text-muted">Backend Developer</p>
+                         <ul class="list-inline social-buttons">
+                            <li><a href="mailto:charlesrm7792@gmail.com"><i class="fa fa-envelope-o fa-lg"></i></a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-linkedin fa-lg"></i></a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-facebook fa-lg"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <span class="copyright">Copyright &copy; MagicPic 2017</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script type="text/javascript" src="assets/js/MagicPic.js"></script> 
+    <script type="text/javascript" src="assets/js/app.js"></script>
+    
+
+
+</body>
+
+</html>
