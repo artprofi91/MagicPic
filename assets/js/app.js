@@ -1,5 +1,3 @@
-// global var
-var conceptNames = "";
 function predict_click(value, source) {
   // first grab current index
   var index = $("#hidden-counter").val();
@@ -243,10 +241,17 @@ $(document).ready(function() {
     $('.displayBox').css('display', '');
     $('.displayBox').css('flex-flow', '');
     $('.displayBox').css('justify-content', '');
+    $('.displayBox').css('text-align', '');
     
   });
 
-  
+  $('#google').click(function () {
+    $('.displayBox').html('');
+    $('.displayBox').css('text-align', 'center');
+    $('.displayBox').append('<iframe class="google" src="https://www.google.com/maps/embed/v1/search?key=AIzaSyCHu8fs_k01UlmlvSSmV7h_10E7vlJkhUc&language=en&q=record+restaurants+near+77042+' + conceptNames + '" allowfullscreen></iframe>');
+
+  });
+
   // show restart button
   $('#youtube, #vimeo, #spotify, #wikipedia, #yelp, #spoon, #google, #wikipedia2').click(function () {
     $("#restart").removeClass("hide");

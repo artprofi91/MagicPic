@@ -68,8 +68,7 @@ h6 {
 color: #333;
 border: 2px solid #333;
 background-color: #FFFFF0 !important;
--webkit-animation: sdb06 5s paused;
-animation: sdb06 5s paused;
+
 }
 
 
@@ -425,3 +424,12 @@ p.extract {
   text-align: center;
   color: #FFFFF0;
 }
+
+/*for google frame*/
+.google {
+  width: 1000px; 
+  height: 450px; 
+  border: 2px solid #333 !important;
+  margin-top: 20px;
+}
+
