@@ -338,7 +338,7 @@ function testCallback (data) {
     var RESULT_RECIPE_TEMPLATE = (
        '<figure class="recipe-card" id="'+RECIPE_JSON_ID+'" role="recipe card">' + //added id to tile
         '<a href='+changeRecipeLink(RECIPE_JSON_ID, RECIPE_JSON_IMAGE)+' class="recipe-link" target="_blank">'+
-          '<img src='+RECIPE_JSON_IMAGE+' alt="Recipe image" class="recipe-image"/>' + 
+          '<img src='+RECIPE_JSON_IMAGE+' alt="Recipe image" class="recipe-image img-responsive"/>' + 
           '<h2 class="recipe-title">'+RECIPE_JSON_TITLE+'</h2>' +
           '<figcaption class="recipe-description">' +
             '<p class="recipe-supplies">'+changeRecipeSupplies(RECIPE_JSON_USED, RECIPE_JSON_MISSED)+'</p>' +

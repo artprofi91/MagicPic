@@ -1,5 +1,5 @@
 body {
-  overflow-x: hidden;
+  overflow-x: hidden !important;
   font-family: 'Slabo 27px', serif !important;
 }
 #app {
@@ -272,6 +272,7 @@ input:active,
 .team-member {
   text-align: center;
   margin-bottom: 50px;
+  width: 100% !important;
 }
 .team-member img {
   margin: 0 auto;
@@ -398,7 +399,7 @@ p.extract {
   justify-content: center !important;
 }
 .recipe-card {
-  width: 287px;
+  width: 100%;
   margin: 5px;
   padding: 10px;
   background-color: #333;
@@ -425,8 +426,7 @@ p.extract {
   display: block;
   margin: 0 auto;
   position: relative;
-  width: 85%;
-  height: 200px;
+ 
 }
 
 .recipe-supplies p {
@@ -453,7 +453,7 @@ h2.recipe-title {
 @media (max-width: 1200px) {
   input, 
   input#filename {
-    width: 350px !important;
+    width: 100% !important;
     text-align: -webkit-center !important;
     margin: 0 auto;
     float: none;
@@ -469,6 +469,7 @@ h2.recipe-title {
   width: 100%;
   }
 }
+
 #to-top {
   display: none;
   position: fixed;
