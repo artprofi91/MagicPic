@@ -21,6 +21,7 @@ a.active {
 }
 a.page-scroll {
   font-family: 'Merienda One', cursive !important;
+   text-align: center;
 }
 
 .navbar-custom .navbar-brand {
@@ -119,7 +120,7 @@ background-color: #FFFFF0 !important;
   color: #333;
   background-color: white;
 }
-@media (min-width: 100px) {
+@media (min-width: 350px) {
   .navbar-custom {
     background-color: transparent;
     padding: 25px 0;
@@ -138,7 +139,7 @@ background-color: #FFFFF0 !important;
     border-radius: 3px;
   }
 }
-@media (min-width: 100px) {
+@media (min-width: 350px) {
   .navbar-custom.affix {
     background-color: black;
     padding: 10px 0;
@@ -176,7 +177,7 @@ header .intro-text .intro-heading {
   line-height: 50px;
   margin-bottom: 25px;
 }
-@media (min-width: 768px) {
+@media (min-width: 350px) {
   header .intro-text {
     padding-top: 300px;
     padding-bottom: 200px;
@@ -293,7 +294,7 @@ input:active,
   font-family: 'Merienda One', cursive !important;
   font-weight: 700;
   font-size: 20px;
-  float: left;
+  float: none;
   width: 162px;
   margin-right: 20px;
   margin-top: 20px;
@@ -310,11 +311,13 @@ input:active,
 
 input {
   border: 2px solid #333;
+  margin-top: 30px;
 }
 
 input#filename {
+  margin-top: 30px;
   padding: 1px;
-  width: 493px !important;
+  width: 493px;
   height: 26px !important;
 }
 
@@ -374,6 +377,8 @@ h4.title,
 p.extract {
   color: #FFFFF0 !important;
   padding-left: 10px;
+  padding-right: 10px;
+  text-align: justify;
 }
 .star, 
 .food {
@@ -389,7 +394,7 @@ p.extract {
   justify-content: center !important;
 }
 .recipe-card {
-  width: 285px;
+  width: 287px;
   margin: 5px;
   padding: 10px;
   background-color: #333;
@@ -420,16 +425,44 @@ p.extract {
   height: 200px;
 }
 
-.recipe-supplies {
+.recipe-supplies p {
   text-align: center;
   color: #FFFFF0;
 }
+p.recipe-desc {
+  text-align: justify !important;
+  color: #FFFFF0;
+  margin-left: 0px;
+}
 
+h2.recipe-title {
+  font-size: 24px !important;
+}
+/*=====end of spoonacular==========*/
 /*for google frame*/
 .google {
   width: 1000px; 
   height: 450px; 
   border: 2px solid #333 !important;
   margin-top: 20px;
+}
+@media (max-width: 1200px) {
+  input, 
+  input#filename {
+    width: 350px !important;
+    text-align: -webkit-center !important;
+    margin: 0 auto;
+    float: none;
+    margin-top: 30px !important;
+  }
+  .google {
+  width: 100%; 
+  height: 350px; 
+  }
+}
+@media (max-width: 600px) {
+ .recipe-card {
+  width: 100%;
+  }
 }
 
