@@ -30,6 +30,15 @@
         }
     })
 
+      // Initialize and Configure Scroll Reveal Animation
+    window.sr = ScrollReveal();
+    sr.reveal('.sr-icons', {
+        duration: 1000,
+        scale: 0.3,
+        distance: '0px'
+    }, 300);
+ 
+
 })(jQuery); // End of use strict
 
 var granimInstance = new Granim({
@@ -54,3 +63,33 @@ var granimInstance = new Granim({
 });
 
 
+ //#to-top button appears after scrolling
+    var fixed = false;
+    $(document).scroll(function() {
+        if ($(this).scrollTop() > 250) {
+            if (!fixed) {
+                fixed = true;
+                // $('#to-top').css({position:'fixed', display:'block'});
+                $('#to-top').show("slow", function() {
+                    $('#to-top').css({
+                        position: 'fixed',
+                        display: 'block'
+                    });
+                });
+            }
+        } else {
+            if (fixed) {
+                fixed = false;
+                $('#to-top').hide("slow", function() {
+                    $('#to-top').css({
+                        display: 'none'
+                    });
+                });
+            }
+        }
+    });
+
+
+
+
+  

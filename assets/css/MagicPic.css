@@ -208,6 +208,10 @@ section h2.section-heading1 {
   margin-bottom: 15px;
   text-transform: uppercase;
 }
+
+
+
+
 section h3.section-subheading {
   font-size: 20px;
   font-family: 'Slabo 27px', serif !important;
@@ -465,4 +469,38 @@ h2.recipe-title {
   width: 100%;
   }
 }
+#to-top {
+  display: none;
+  position: fixed;
+  bottom: 5px;
+  right: 5px;
+  background-color: #333;
+  color: #FFFFF0;
+}
 
+/*slide in animation*/
+@-webkit-keyframes bounce {
+
+  0% {
+    -webkit-transform:translateX(-100%);
+    opacity: 0;
+  }
+  50% {
+    -webkit-transform:translateX(15%);
+    opacity: 0.5;
+    padding-right: 50px;
+  }
+  100% {
+    -webkit-transform:translateX(0%);
+    opacity: 1;
+  }
+}
+
+.intro-heading  {
+  /*cross browser functionality*/
+  -webkit-animation: bounce 800ms ease-in-out;
+  -moz-animation: bounce 800ms ease-in-out;
+  -o-animation: bounce 800ms ease-in-out;
+  animation: bounce 1800ms ease-in-out;
+  
+}
