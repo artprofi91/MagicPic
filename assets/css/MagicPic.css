@@ -21,7 +21,7 @@ a.active {
 }
 a.page-scroll {
   font-family: 'Merienda One', cursive !important;
-   text-align: center;
+  text-align: center;
 }
 
 .navbar-custom .navbar-brand {
@@ -505,3 +505,65 @@ h2.recipe-title {
   animation: bounce 1800ms ease-in-out;
   
 }
+
+/*================ modal error1========*/
+.modal-dialog {
+  position:absolute;
+  top:50% !important;
+  transform: translate(0, -50%) !important;
+  -ms-transform: translate(0, -50%) !important;
+  -webkit-transform: translate(0, -50%) !important;
+  margin:auto 15%;
+  width:70%;
+  height:300px;
+}
+.modal-content {
+  min-height:100%;
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0; 
+}
+.modal-body {
+  position:absolute;
+  top:45px; 
+  bottom:45px;  
+  left:0;
+  right:0;
+  overflow-y:auto;
+}
+.modal-footer {
+  position:absolute;
+  bottom:0;
+  left:0;
+  right:0;
+}
+.modal-header,
+.modal-footer {
+    background-color: #333;
+    color: #FFFFF0;
+    border-style: none;
+}
+.modal-title {
+    font-size: 30px;
+}
+.btn-lg {
+    background: #333;
+    color: #FFFFF0;
+}
+
+.btn-lg:hover,
+.btn-primary:active,
+.btn-primary:focus {
+  color: #333;
+  background-color: #FFFFF0;
+}
+.modal-body p {
+  margin-top: 16px !important;
+  font-family: 'Merienda One', cursive !important;
+  font-size: 20px;
+
+}
+/*=========end of modal error1============*/
+

@@ -110,13 +110,10 @@ function createNewDisplayDiv(index) {
 $(document).ready(function() {
   // predict url function
   $('#url').click(function() {
-    if(imgurl.value == '') { 
-        alert('Please enter an image URL!'); 
-        return;
-      } 
-    
-      else if (!validFile(imgurl.value)) {
-        alert('Supported File Types: JPEG, PNG, TIFF, BMP');
+    if (!validFile(imgurl.value)) {
+        $("#error1Modal").modal({
+          backdrop: "static",
+          keyboard: false});
         return;
       }
     
@@ -126,13 +123,10 @@ $(document).ready(function() {
 
   // upload and predict url function
   $('#upload').click(function() {
-    if(filename.value == '') { 
-        alert('Please browse for a file!'); 
-        return;
-      } 
-    
-      else if (!validFile(filename.value)) {
-        alert('Supported File Types: JPEG, PNG, TIFF, BMP');
+    if (!validFile(filename.value)) {
+        $("#error1Modal").modal({
+          backdrop: "static",
+          keyboard: false});
         return;
       }
       predict_click($('#filename').val(), 'file');
