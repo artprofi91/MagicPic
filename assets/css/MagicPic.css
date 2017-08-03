@@ -2,7 +2,8 @@ body {
   overflow-x: hidden !important;
   font-family: 'Slabo 27px', serif !important;
 }
-#app {
+#app,
+#about {
   margin-bottom: 300px !important;
 }
 
@@ -38,7 +39,6 @@ h4,
 h5,
 h6 {
   font-family: 'Merienda One', cursive !important;
-
   font-weight: 700;
 }
 
@@ -399,7 +399,7 @@ p.extract {
   justify-content: center !important;
 }
 .recipe-card {
-  width: 100%;
+  width: 33%;
   margin: 5px;
   padding: 10px;
   background-color: #333;
@@ -566,4 +566,10 @@ h2.recipe-title {
 
 }
 /*=========end of modal error1============*/
-
+.magicPic {
+  font-family: 'Merienda One', cursive !important;
+  font-size: 20px;
+}
+.inner-container {
+  margin-top: 10%;
+}
