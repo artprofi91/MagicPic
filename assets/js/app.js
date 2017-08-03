@@ -77,10 +77,6 @@ function doPredict(value) {
       }
       $('#concepts').html(conceptNames);
       $(".hero-name").html(conceptNames);
-      event.preventDefault();
-      database.ref().set({
-      detected: conceptNames,
-      });
     },
   );
 }
