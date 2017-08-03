@@ -161,6 +161,8 @@ $(document).ready(function() {
     $('.displayBox').css('flex-flow', '');
     $('.displayBox').css('justify-content', '');
     $("#restart").addClass("hide");
+    $(".celFood").empty();
+    $(".searching").removeClass("hide");
   });
 
 
