@@ -37,6 +37,15 @@
         scale: 0.3,
         distance: '0px'
     }, 300);
+    sr.reveal('.sr-button', {
+        duration: 1000,
+        delay: 500
+    });
+    sr.reveal('.sr-contact', {
+        duration: 1000,
+        scale: 0.3,
+        distance: '0px'
+    }, 300);
  
 
 })(jQuery); // End of use strict
