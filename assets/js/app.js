@@ -249,7 +249,7 @@ $(document).ready(function() {
   $('#youtube').click(function () {
     $('.displayBox').html('');
     $('.displayBox').css('text-align', 'center');
-    $('.displayBox').append('<iframe class="google" src="http://www.youtube.com/embed?listType=search;list=' + conceptNames + '" frameborder="0" width="480" height="360"></iframe>');
+    $('.displayBox').append('<iframe class="google" src="https://www.youtube.com/embed?listType=search;list=' + conceptNames + '" frameborder="0" width="480" height="360"></iframe>');
 
   });
 
