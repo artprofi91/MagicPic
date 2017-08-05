@@ -156,13 +156,14 @@ $(document).ready(function() {
     $(".hero-name").addClass("hide");
     $(".food").addClass("hide");
     $('.displayBox').empty();
+    $(".celFood h2").empty();
+    $(".searching").removeClass("hide");
     // important for spoonacular 
     $('.displayBox').css('display', '');
     $('.displayBox').css('flex-flow', '');
     $('.displayBox').css('justify-content', '');
     $("#restart").addClass("hide");
-    $(".celFood").empty();
-    $(".searching").removeClass("hide");
+    
   });
 
 
@@ -243,6 +244,12 @@ $(document).ready(function() {
     $('.displayBox').html('');
     $('.displayBox').css('text-align', 'center');
     $('.displayBox').append('<iframe class="google" src="https://www.google.com/maps/embed/v1/search?key=AIzaSyCHu8fs_k01UlmlvSSmV7h_10E7vlJkhUc&language=en&q=record+restaurants+near+77042+' + conceptNames + '" allowfullscreen></iframe>');
+
+  });
+  $('#youtube').click(function () {
+    $('.displayBox').html('');
+    $('.displayBox').css('text-align', 'center');
+    $('.displayBox').append('<iframe class="google" src="http://www.youtube.com/embed?listType=search;list=' + conceptNames + '" frameborder="0" width="480" height="360"></iframe>');
 
   });
 
