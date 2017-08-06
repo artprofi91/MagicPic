@@ -228,11 +228,9 @@ $(document).ready(function() {
   $('#wikipedia, #wikipedia2').click(function () {
     searchWiki();
   });
-
   
-
   // show restart button
-  $('#youtube, #vimeo, #spotify, #wikipedia, #yelp, #google, #wikipedia2').click(function () {
+  $('#youtube, #daily, #wikipedia, #yelp, #google, #wikipedia2').click(function () {
     $('.displayBox').css('display', '');
     $('.displayBox').css('flex-flow', '');
     $('.displayBox').css('justify-content', '');
@@ -254,7 +252,7 @@ $(document).ready(function() {
   });
 
   // show restart button
-  $('#youtube, #vimeo, #spotify, #wikipedia, #yelp, #spoon, #google, #wikipedia2').click(function () {
+  $('#youtube, #daily, #wikipedia, #yelp, #spoon, #google, #wikipedia2').click(function () {
     $("#restart").removeClass("hide");
   });
 
@@ -426,3 +424,41 @@ function submitUserData () {
 
 submitUserData();
 // =================== END SPOONACULAR=========================
+
+
+
+
+//-------------------- DAILYMOTION ---------------------------//
+
+    
+        $("#daily").on("click",function(event){
+          $('.displayBox').html('');
+          $('.displayBox').append('<span id ="vid0"></span');
+          $('.displayBox').append('<span id ="vid1"></span');
+          $('.displayBox').append('<span id ="vid2"></span');
+          $('.displayBox').append('<span id ="vid3"></span');
+
+          var queryURL = "https://api.dailymotion.com/videos?search=" + conceptNames + "&language=en";
+          $.ajax({
+            url: queryURL ,
+            method: "GET"
+          }).done(function(response) {
+          for (i=0;i<4;i++){
+            //Feed the document.getElementByID("vid[i]") spans to the DM.player method
+            var player = DM.player(document.getElementById("vid"+i), {
+            //Populate spans by calling for videos by their DM ids
+            video: response.list[i].id,
+            //Size these videos however you want, Artem
+            width: "400px",
+            height: "200px",
+              params: {
+                autoplay: false,
+                mute: true
+                }
+            });
+          }
+          });
+        })
+
+//-------------------- END OF DAILYMOTION ---------------------------//
+
