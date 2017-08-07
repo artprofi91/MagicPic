@@ -588,8 +588,30 @@ h2.recipe-title {
   #vid1,
   #vid2,
   #vid3 {
-  margin-right: 0px;
-  margin-bottom: 20px;
-  width: 300px !important
+    margin-right: 0px;
+    margin-bottom: 20px;
+    width: 300px !important
   }
+}
+@media (max-width: 600px) {
+  .zomato {
+    width: 100% !important;
+    margin-right: 0;
+  }
+}
+.zomato {
+  background-color: #333;
+  color: #FFFFF0;
+  width: 30%;
+  margin-right: 3%;
+  height: 390px;
+  float: left;
+  margin-bottom: 10px;
+}
+
+.zomato p {
+  margin-bottom: 0;
+}
+.zomato a {
+  color: #FFFFF0;
 }

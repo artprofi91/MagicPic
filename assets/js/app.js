@@ -230,7 +230,7 @@ $(document).ready(function() {
   });
   
   // show restart button
-  $('#youtube, #daily, #wikipedia, #yelp, #google, #wikipedia2').click(function () {
+  $('#youtube, #daily, #wikipedia, #zomato, #google, #wikipedia2').click(function () {
     $('.displayBox').css('display', '');
     $('.displayBox').css('flex-flow', '');
     $('.displayBox').css('justify-content', '');
@@ -252,7 +252,7 @@ $(document).ready(function() {
   });
 
   // show restart button
-  $('#youtube, #daily, #wikipedia, #yelp, #spoon, #google, #wikipedia2').click(function () {
+  $('#youtube, #daily, #wikipedia, #zomato, #spoon, #google, #wikipedia2').click(function () {
     $("#restart").removeClass("hide");
   });
 
@@ -462,3 +462,21 @@ submitUserData();
 
 //-------------------- END OF DAILYMOTION ---------------------------//
 
+
+//-------------------- Zomato ---------------------------//
+$('#zomato').on('click', function(event){
+  $('.displayBox').html('');
+      
+   var queryURL = "https://developers.zomato.com/api/v2.1/search?q=" + conceptNames + "&count=6&lat=29.729175&lon=-95.548385&radius=10000&category=food&sort=rating&order=desc";
+          $.ajax({
+            url: queryURL,
+            method: 'GET',
+            dataType: "json",
+            headers: { "user-key" : "4d609c051ef3552ba0d69f355abda8c7" }
+            }).done(function(response) {
+              console.log (response);
+
+            for(var i=0; i<6; i++) {
+              $('.displayBox').append('<div class="zomato text-center"><h3>' + response.restaurants[i].restaurant.name + '</h3>' + '<img class="img-responsive" alt="Zomato does not have the image of the restaurant" src =' + response.restaurants[i].restaurant.featured_image + '><br>' + '<p>Cuisine: ' + response.restaurants[i].restaurant.cuisines + '</p>' + '<p>Rating: ' + response.restaurants[i].restaurant.user_rating.aggregate_rating + '<i class="fa fa-star"></i></p>' + '<a href=' + response.restaurants[i].restaurant.menu_url + ' target="_blank">Menu</a><br>' + '<a href=' + response.restaurants[i].restaurant.photos_url + ' target="_blank">Photos of the restaurant</a><br>' + '<p>Address: ' + response.restaurants[i].restaurant.location.address + '</p></div>');    
+           }})});
+//-------------------- End of zomato ---------------------------//
