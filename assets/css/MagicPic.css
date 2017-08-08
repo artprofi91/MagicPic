@@ -594,6 +594,9 @@ h2.recipe-title {
   }
 }
 @media (max-width: 600px) {
+  .btn-primary {
+  font-size: 16px;
+  }
   .zomato {
     width: 100% !important;
     margin-right: 0;
