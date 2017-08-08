@@ -153,7 +153,7 @@ $(document).ready(function() {
     $(".star").addClass("hide");
     $("#url").addClass("hide");
     $("#upload").addClass("hide");
-    $(".hero-name").addClass("hide");
+    $(".hero-name").empty();
     $(".food").addClass("hide");
     $('.displayBox').empty();
     $(".celFood h2").empty();
